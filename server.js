@@ -6,6 +6,7 @@ var session  = require('express-session');
 var exphbs = require("express-handlebars");
 var passport = require('passport');
 var db = require("./models/");
+var mysqlConfig = require("./config/config.json")
 
 
 
@@ -49,6 +50,15 @@ var syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
+
+// const router = require('./routes/router.js')
+
+// const connectionPool = mysql.createPool(mysqlConfig);
+// connectionPool.query = util.promisify(connectionPool.query)
+
+// const Storage = require("./routes/storage");
+// const storage = new Storage(connectionPool);
+// router.setRoutes(app, "/events", storage);
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function() {

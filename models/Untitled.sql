@@ -1,14 +1,12 @@
 DROP DATABASE IF EXISTS scheduler;
 CREATE DATABASE scheduler;
-
 USE scheduler;
-
+ 
+DROP TABLE IF EXISTS events;
 CREATE TABLE events (
-    id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    start_date DATETIME NOT NULL,
-	end_date DATETIME NOT NULL,
-	text VARCHAR(255) NOT NULL,
-    PRIMARY KEY (ID)
-    
+ id INT NOT NULL AUTO_INCREMENT,
+ start_date datetime NOT NULL,
+ end_date datetime NOT NULL,
+ text varchar(255) DEFAULT NULL,
+ PRIMARY KEY (id)
 );
-
