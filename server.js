@@ -1,4 +1,4 @@
-srequire("dotenv").config();
+require("dotenv").config();
 
 var util = require('util');
 var mysql = require('mysql');
@@ -48,15 +48,6 @@ var syncOptions = { force: false };
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = true;
 }
-
-// const router = require('./routes/router.js')
-
-// const connectionPool = mysql.createPool(mysqlConfig);
-// connectionPool.query = util.promisify(connectionPool.query)
-
-// const Storage = require("./routes/storage");
-// const storage = new Storage(connectionPool);
-// router.setRoutes(app, "/events", storage);
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function () {
