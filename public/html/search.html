@@ -17,7 +17,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        $(() => {
+            $("#form1").click((event) => {
+                event.preventDefault();
+                var artist= $("#form1").text();
+                localStorage.setItem("Artist", artist);
+                window.location.href = "/records";
+            })
+        })
         
+    </script>
 </head>
 
 <body>
@@ -51,20 +62,24 @@
                     </div>
                         
                     <div class="col-2">
-                            <div id="cover">
-                                <form method="get" action="">
+
+                        <div id="cover">
+                            <!-- <a href="/records"> -->
+                                <form id="form1">
                                     <div class="tb">
                                         <div class="td" id="s-cover">
-                                            <button type="submit">
-                                                <div id="s-circle"></div>
+                                                <button>
+                                                    <div id="s-circle"></div>
                                                 <span></span>
                                             </button>
                                         </div>
                                     </div>
                                 </form>
-                            </div>
+                            <!-- </a>  -->
+                        </div>
+
+                        </div>
                     </div>
-                </div>
             </div>
 
             <div class="input-group mb-3" class="inputName">
@@ -76,7 +91,7 @@
                     <form method="get" action="">
                         <div class="tb">
                             <div class="td" id="s-cover">
-                                <button type="submit">
+                                <button href="/records">
                                     <div id="s-circle"></div>
                                     <span></span>
                                 </button>

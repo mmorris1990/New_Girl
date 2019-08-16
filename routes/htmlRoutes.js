@@ -53,7 +53,7 @@ module.exports = function (app, passport) {
 
   // });
   app.get('/records' , isLoggedIn , function(req,res){
-    res.sendFile(path.join(__dirname, "..public/html/records.html"));
+    res.sendFile(path.join(__dirname, "../public/html/records.html"));
   });
 
   // =====================================
