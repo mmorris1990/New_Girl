@@ -1,42 +1,57 @@
 var db = require("../models");
-
-module.exports = function(app) {
-<<<<<<< HEAD
-  // Get all examples
-  app.get("/api/scheduler", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+module.exports = function (app) {
+  // Find all Records and return them to the user with res.json
+  app.get("/api/records", function (req, res) {
+    db.Record.findAll({
+    }).then(function (dbRecord) {
+      res.json(dbRecord);
     });
   });
-
-  // Create a new example
-  app.post("/api/scheduler", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Find all Records by Artist and return them to the user with res.json
+  app.get("/api/records/:artist", function (req, res) {
+    db.Record.findAll({
+      where: {
+        Artist: req.params.artist
+      }
+    }).then(function (dbRecord) {
+      res.json(dbRecord);
     });
   });
-
-  // Delete an example by id
-  app.delete("/api/scheduler/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
-=======
+  // Find all Records by Album and return them to the user with res.json
+  app.get("/api/records/:album", function (req, res) {
+    db.Record.findAll({
+      where: {
+        Album: req.params.album
+      }
+    }).then(function (dbRecord) {
+      res.json(dbRecord);
+    });
+  });
+  // Find all Records All Users are willing to trade and return them to the user with res.json
+  app.get("/api/records/:willingToTrade", function (req, res) {
+    db.Record.findAll({
+      where: {
+        WillingToTrade: req.params.willingToTrade
+      }
+    }).then(function (dbRecord) {
+      res.json(dbRecord);
+    });
+  });
   // Post Record to Record collection
-  app.post("/api/addRecord", function(req, res) {
+  app.post("/api/addRecord", function (req, res) {
     console.log(req.body)
-    db.Records.create(req.body).then(function(dbPost) {
-      res.json(dbPost);
+    db.Record.create(req.body).then(function (dbRecord) {
+      res.json(dbRecord);
     });
   });
   //Delete Album
-  app.delete("/api/records/:id", function(req, res) {
-    db.Post.destroy({
+  app.delete("/api/records/:id", function (req, res) {
+    db.Record.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbPost) {
-      res.json(dbPost);
->>>>>>> 4ada8833d4a6dda166165274626f952c0f86ea91
+    }).then(function (dbRecord) {
+      res.json(dbRecord);
     });
   });
 };
