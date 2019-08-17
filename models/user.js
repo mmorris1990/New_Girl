@@ -9,11 +9,12 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allownull: false
     }
-  })
-  // User.associate = function(models) {
-  //   User.hasMany(models.Record, {
-  //     onDelete: "cascade"
-  //   });
-  // };
+  });
+    User.associate = function(models) {
+    User.hasMany(models.Record, {
+      onDelete: "cascade"
+    });
+  };
+  
   return User;
 };
