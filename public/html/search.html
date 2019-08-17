@@ -22,7 +22,7 @@
         $(() => {
             $("#form1").click((event) => {
                 event.preventDefault();
-                var artist= $("#form1").text();
+                var artist= $("#form1").val();
                 localStorage.setItem("Artist", artist);
                 window.location.href = "/records";
             })
