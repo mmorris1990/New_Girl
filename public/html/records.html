@@ -19,7 +19,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <title>Search Results</title>
-</head>
+    <style>
+        
+
+    </style>
 
 <body>
 
@@ -99,12 +102,16 @@
             button.text("View This Users Catalog");
             divFour.append(button);
             button.attr({
-                "class": "btn",
+                "class": "btn recordsBtn",
                 "id": username[x]
             });
             button.css({
-                "background-color": "blue"
+                "background-color": "blue",
+                "width":"200px" ,
+                "height":"50px"
+                
             })
+           
 
 
             $("#recy").append(divOne);

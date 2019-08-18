@@ -172,6 +172,7 @@ button span:before, button span:after
     transition: 0.5s ease all;
 }
 
+
 #s-cover:hover #s-circle
 {
     top: -1px;
