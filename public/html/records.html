@@ -88,8 +88,9 @@
     var type = searchStorage[0];
     var value = searchStorage[1];
     var url = "/api/records/" + type + "/" + value
-    if (type = "all") {
-        url = "api/records"
+    console.log(url);
+    if (type === "all") {
+        url = "/api/records"
     };
     $.get(url, function (data) {
         for (x in data) {
