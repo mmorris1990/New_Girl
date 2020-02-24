@@ -1,37 +1,25 @@
-# PickU
-   A competitive game to encourage participation in the classroom.
-   
-## Getting Started
+# New Girl Class Calendar Project
+---
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+**[Deployed Heroku link](https://new-girl.herokuapp.com)**
 
-### Prerequisites
+A Full Stack calendar application perfect for quick and efficient event planning in the classroom. Users can create an account as either a student or an instructor. Both roles can make and manage their schedule for one month at a time, however a student user's events will be personal to their calendar alone. 
 
+## Technologies Used
+---
+- Node.js
+- MySQL database
+- Sequelize routing and models
+- Express Server
+- Passport user authentication
+- Calendar
 
+## Functionality
+---
+1. New users will need to register a new account, and specify whether they are an instructor or a student. *Don't forget your password!*
 
-```
-Node.js
-```
+2. Login to see a personalized calendar of events for the next month. An instructor's calendar will show all class-wide events, a student's calendar will show all class-wide events as well as their personal events.
 
-### Installing
+3. Either user roles have the ability to create new events specifying the event title, description, a start time and an end time. Users can also edit events in their calendar as well as delete them.
 
-Clone the repo 
-
-Run this command in the root of the project:
-
-```
-npm i
-```
-Once that is finished, run: 
-
-```
-npm start
-```
-   
-## Built With
-React - The web framework used      
-Passport - User Authentication
-
-## Authors
-
-Simon Kraus, Rachel Harrison, Ben Flippen, and Rachel Givens
+4. Don't forget to logout when you are finished!
